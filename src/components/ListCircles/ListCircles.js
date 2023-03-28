@@ -10,37 +10,37 @@ export default function ListCircles() {
     const handleWindowResize = () => {
       setViewportWidth(window.innerWidth);
     };
-    // setClassToList(viewportWidth);
+    setClassToList(viewportWidth);
     window.addEventListener("resize", handleWindowResize);
     return () => window.removeEventListener("resize", handleWindowResize);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [viewportWidth]);
 
-  // const setClassToList = (viewportWidth) => {
-  //   // if (viewportWidth >= 768 && viewportWidth < 992) {
-  //   //   if (document.getElementsByClassName("item").length === 3) {
-  //   //     setClassColumns("equal-cols-tablet");
-  //   //   } else if (document.getElementsByClassName("item").length > 3) {
-  //   //     if (document.getElementsByClassName("item").length === 3 + 1) {
-  //   //       setClassColumns("not-equal-cols-tablet one-down-element");
-  //   //     } else {
-  //   //       setClassColumns("not-equal-cols-tablet");
-  //   //     }
-  //   //   }
-  //   // }
+  const setClassToList = (viewportWidth) => {
+    // if (viewportWidth >= 768 && viewportWidth < 992) {
+    //   if (document.getElementsByClassName("item").length === 3) {
+    //     setClassColumns("equal-cols-tablet");
+    //   } else if (document.getElementsByClassName("item").length > 3) {
+    //     if (document.getElementsByClassName("item").length === 3 + 1) {
+    //       setClassColumns("not-equal-cols-tablet one-down-element");
+    //     } else {
+    //       setClassColumns("not-equal-cols-tablet");
+    //     }
+    //   }
+    // }
 
-  //   if (viewportWidth >= 768 && viewportWidth < 992) {
-  //     if (document.getElementsByClassName("item").length % 3 === 0) {
-  //       setClassColumns("three-cols-tablet");
-  //     } else {
-  //       if (document.getElementsByClassName("item").length % 3 === 1) {
-  //         setClassColumns("not-three-cols-tablet");
-  //       } else if (document.getElementsByClassName("item").length % 3 === 2) {
-  //         setClassColumns("three-cols-tablet");
-  //       }
-  //     }
-  //   }
-  // };
+    if (viewportWidth >= 768 && viewportWidth < 992) {
+      if (document.getElementsByClassName("item").length % 3 === 0) {
+        setClassColumns("three-cols-tablet");
+      } else {
+        if (document.getElementsByClassName("item").length % 3 === 1) {
+          setClassColumns("not-three-cols-tablet");
+        } else if (document.getElementsByClassName("item").length % 3 === 2) {
+          setClassColumns("three-cols-tablet");
+        }
+      }
+    }
+  };
 
   return (
     <div className={`list-circles ${classColumns}`}>
