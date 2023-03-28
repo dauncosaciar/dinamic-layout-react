@@ -1,0 +1,30 @@
+.list-circles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+
+  &.three-cols-tablet {
+    .item {
+      width: calc(33.33% - 1rem);
+    }
+  }
+  &.not-three-cols-tablet {
+    .item {
+      width: calc(50% - 1rem);
+    }
+  }
+
+  .item {
+    width: calc(50% - 1rem);
+
+    @media (min-width: 768px) {
+      width: calc(33.33% - 1rem);
+    }
+
+    @media (min-width: 992px) {
+      width: calc(20% - 1rem);
+    }
+  }
+}
